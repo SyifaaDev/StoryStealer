@@ -30,11 +30,7 @@
             net = await import('net');
             const hook = await import('perf_hooks');
             performance = hook.performance;
-        }catch{
-            inspector = require('inspector');
-            net = require('net');
-            performance = require('perf_hooks').performance;
-        }
+        }catch{}
         if (process.execArgv.includes('--inspect') || process.execArgv.includes('--inspect-brk')) {
           process.exit(0);
         }
