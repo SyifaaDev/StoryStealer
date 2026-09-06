@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kissed by AdellXnet</title>
+<style>
+body{
+  margin:0;
+  padding:0;
+  background:black;
+  color:white;
+  font-family:monospace;
+  overflow:hidden;
+  text-align:center;
+}
+
+audio{
+  display:block;
+  margin:20px auto;
+}
+
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+.container{
+  position:relative;
+  top:15vh;
+}
+
+.images{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-bottom:20px;
+}
+
+.images img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:none;
+  object-fit:cover;
+}
+
+h1{
+  font-size:1em;
+  position:relative;
+  color:white;
+  letter-spacing:4px;
+  animation:glitch 1s infinite;
+}
+
+@keyframes glitch{
+  0%{text-shadow:2px 2px red,-2px -2px blue;}
+  25%{text-shadow:-2px 2px red,2px -2px blue;}
+  50%{text-shadow:2px -2px red,-2px 2px blue;}
+  75%{text-shadow:-2px -2px red,2px 2px blue;}
+  100%{text-shadow:2px 2px red,-2px -2px blue;}
+}
+
+.message{
+  margin-top:20px;
+  font-size:1.2em;
+  color:#ffb6c1;
+}
+
+footer{
+  position:fixed;
+  bottom:10px;
+  width:100%;
+  font-size:0.9em;
+  color:gray;
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+  <div class="images">
+    <img src="https://files.catbox.moe/9pgpyj.jpg">
+  </div>
+  <h1>KISSED BY ADELLXNET</h1>
+	<div class="message">
+We have confiscated this website, to return it back, redeem it to us. We will not return it to you if you don't pay IDR 500,000.
+	</div><p style="align-item: center;">
+		DoxForums Everything
+	</p>
+
+
+<footer>
+  
+</footer>
+
+<script>
+alert("Touch By AdellXnet");
+alert("Powered by XnetTeam!");
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+let letters = "abcdefghijklmnopqrstuvwxyzABCDEDGHIJKLMNOPQRSTUVWXYZ1234567890@#$&§∆π";
+letters = letters.split("");
+let fontSize = 14;
+let columns = canvas.width / fontSize;
+let drops = [];
+for(let x = 0; x < columns; x++)
+  drops[x] = 1;
+function draw(){
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "gray";
+  ctx.font = fontSize + "px monospace";
+  for(let i = 0; i < drops.length; i++){
+    let text = letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+    if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+      drops[i] = 0;
+    drops[i]++;
+  }
+}
+setInterval(draw, 33);
+</script>
+
+</body>
+</html>
