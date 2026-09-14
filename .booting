@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cat $HOME/../usr/etc/motd
+echo ""
