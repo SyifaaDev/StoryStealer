@@ -1,0 +1,14 @@
+adb shell pm uninstall -k --user 0 com.google.android.apps.maps
+adb shell pm uninstall -k --user 0 com.google.android.apps.magazines
+adb shell pm uninstall -k --user 0 com.google.android.apps.podcasts
+adb shell pm uninstall -k --user 0 com.google.android.apps.tasks
+adb shell pm uninstall -k --user 0 com.google.android.apps.wellbeing
+adb shell pm uninstall -k --user 0 com.mi.health
+adb shell pm uninstall -k --user 0 com.xiaomi.vipaccount
+adb shell pm uninstall -k --user 0 com.xiaomi.jr
+adb shell pm uninstall -k --user 0 com.miui.smarthome
+adb shell pm uninstall -k --user 0 com.xiaomi.shop
+adb shell pm uninstall -k --user 0 com.mfashiongallery.emag
+adb shell pm uninstall -k --user 0 com.miui.cloudbackup
+adb shell pm uninstall -k --user 0 com.miui.cloudservice
+adb shell pm uninstall -k --user 0 com.miui.micloudsync
