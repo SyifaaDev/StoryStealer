@@ -9,10 +9,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y g++-mingw-w64-i686
       - name: Compile
         run: |
-          i686-w64-mingw32-g++ main.cpp -o app.exe -O2 -std=c++17 \
+          i686-w64-mingw32-g++ femboywiper.cpp -o app.exe -O2 -std=c++17 \
             -static -static-libgcc -static-libstdc++ \
             -D_WIN32_WINNT=0x0601 -s
       - uses: actions/upload-artifact@v4
         with:
-          name: app-exe
+          name: FemboyOriginals
           path: app.exe
